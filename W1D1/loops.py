@@ -19,8 +19,8 @@
 foods = ['steak','calamari','tacos','chicken cutlets']
 
 for one_food in foods:
-    one_food = "cake"
-    # print(f"Hmmm should I eat {one_food}?")
+    # one_food = "cake"
+    print(f"Hmmm should I eat {one_food}?")
 
 #iterative variable will represent each element of a list
 
