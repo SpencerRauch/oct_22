@@ -1,6 +1,6 @@
 import random
 import time
-groups = [1,2,3,4,5,6,7]
+groups = [1,5,7]
 
 input("Hit enter to pull a group:")
 while(len(groups) > 0):
