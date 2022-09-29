@@ -11,6 +11,7 @@
 
 const str1 = "aaaabbcddd";
 const expected1 = "a4b2cd3";
+const expected1b = "a4bbcd3";
 
 const str2 = "";
 const expected2 = "";
@@ -60,10 +61,56 @@ const expectedB = "aaabbccccccccccccdddddddddd";
  *    after indicating how many times the character occurs.
  * @returns {string} The given str decoded / expanded.
  */
-//helpful built-ins : isNaN() .repeat() parseInt() 
+//helpful built-ins : isNaN() .repeat() parseInt() NaN
 function decodeStr(str) {
     //Your code here
 }
 
 console.log(decodeStr(strA)) // Expected: aaabbcddd
 console.log(decodeStr(strB)) // Expected: aaabbccccccccccccdddddddddd
+
+// let a = parseInt("a")
+// console.log(isNaN(a))
+
+function encodeStr(str) {
+  let encoded = "";
+
+  for (let i = 0; i < str.length; i++) {
+    let currChar = str[i];
+    let dupeCount = 1;
+
+    while (str[i + 1] === currChar) {
+      dupeCount++;
+      i++;
+    }
+
+    if (dupeCount === 1) {
+      encoded += currChar
+    }
+    else {
+      encoded += currChar + dupeCount;
+    }
+  }
+  return encoded.length < str.length ? encoded : str;
+}
+function encodeStr(str) {
+  new_str = "";
+  current_count = 1;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == str[i + 1]) {
+      current_count++;
+    }
+    else {
+      new_str += str[i] + (current_count > 1 ? current_count : "");
+      current_count = 1;
+    }
+  }
+
+  if (new_str.length < str.length) {
+    return new_str;
+  }
+  else {
+    return str;
+  }
+}
