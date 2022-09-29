@@ -27,7 +27,7 @@ def color_multiplier(color, number):
 # What will show in your browser?
 # Will there be an error and where do you think the error will show up?
 
-# 1.) When you go to: localhost:5000
+# 1.) When you go to: localhost:5000 
 # 2.) When you go to: localhost:5000/colors/red
 # 3.) When you go to: localhost:5000/colors/blue/8
 
