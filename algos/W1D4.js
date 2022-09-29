@@ -72,45 +72,45 @@ console.log(decodeStr(strB)) // Expected: aaabbccccccccccccdddddddddd
 // let a = parseInt("a")
 // console.log(isNaN(a))
 
-function encodeStr(str) {
-  let encoded = "";
+// function encodeStr(str) {
+//   let encoded = "";
 
-  for (let i = 0; i < str.length; i++) {
-    let currChar = str[i];
-    let dupeCount = 1;
+//   for (let i = 0; i < str.length; i++) {
+//     let currChar = str[i];
+//     let dupeCount = 1;
 
-    while (str[i + 1] === currChar) {
-      dupeCount++;
-      i++;
-    }
+//     while (str[i + 1] === currChar) {
+//       dupeCount++;
+//       i++;
+//     }
 
-    if (dupeCount === 1) {
-      encoded += currChar
-    }
-    else {
-      encoded += currChar + dupeCount;
-    }
-  }
-  return encoded.length < str.length ? encoded : str;
-}
-function encodeStr(str) {
-  new_str = "";
-  current_count = 1;
+//     if (dupeCount === 1) {
+//       encoded += currChar
+//     }
+//     else {
+//       encoded += currChar + dupeCount;
+//     }
+//   }
+//   return encoded.length < str.length ? encoded : str;
+// }
+// function encodeStr2(str) {
+//   new_str = "";
+//   current_count = 1;
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] == str[i + 1]) {
-      current_count++;
-    }
-    else {
-      new_str += str[i] + (current_count > 1 ? current_count : "");
-      current_count = 1;
-    }
-  }
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] == str[i + 1]) {
+//       current_count++;
+//     }
+//     else {
+//       new_str += str[i] + (current_count > 1 ? current_count : "");
+//       current_count = 1;
+//     }
+//   }
 
-  if (new_str.length < str.length) {
-    return new_str;
-  }
-  else {
-    return str;
-  }
-}
+//   if (new_str.length < str.length) {
+//     return new_str;
+//   }
+//   else {
+//     return str;
+//   }
+// }
