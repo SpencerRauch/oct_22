@@ -9,17 +9,19 @@ def index():
     return "Welcome to the colorful routes app!"
 
 @app.route("/colors/<color>")
+@app.route("/colors/<color>/")
 def show_color(color):
 
     print(f"Testing: The color is {color}")
-    return color
-    # return f"<h1 style='background-color:{color}'>{color}</h1>"
+    # return color
+    return f"<h2 style='background-color:{color}'>{color}</h2>"
 
-@app.route("/colors/<color>/<number>")
+@app.route("/colors/<color>/<int:number>")
 def color_multiplier(color, number):
     print(f"Duplicating {color} {number} times...")
 
-    return color * number
+    return f"<h2 style='background-color:{color}'>{color * number}</h2>"
+
 
 ######### Predict the output #########
 
