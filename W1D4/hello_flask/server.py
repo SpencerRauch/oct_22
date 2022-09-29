@@ -21,9 +21,18 @@ def say_hello(name):
 def say_name_times(name,times):
     return name * times
 
-@app.route('/template')
-def template():
-    return render_template("index.html")
+@app.route('/template/<int:number>')
+@app.route('/template/<int:number>/<word>')
+def template(number,word="Default"):
+    actual_num = number * 40
+    student_info = [
+       {'name' : 'Michael', 'age' : 35},
+       {'name' : 'John', 'age' : 30 },
+       {'name' : 'Mark', 'age' : 25},
+       {'name' : 'KB', 'age' : 27}
+    ]
+    return render_template("index.html", number      =    actual_num,word=word, student_list=student_info)
+                                       #NAME ON TEMP  ACTUAL VALUE
 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module
     app.run(debug=True)    # Run the app in debug mode.

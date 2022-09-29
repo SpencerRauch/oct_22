@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
+
 <body>
-    <h1>Now we're servin templates!</h1>
-    <a href="/">Hello World</a>
-    <a href="/path2">Path 2</a>
+    <div class="container">
+
+        <h1>Now we're servin templates!</h1>
+        <p>{{word}}</p>
+        <p>{{number}}</p>
+
+        {#{% for i in range(number)%}
+        <p>{{student.name}}</p>
+        {% endfor %}#}
+        {% for one_student in student_list %}
+        {% if one_student.name == "John" %}
+        <p>Hi John! This is your special message</p>
+        <img src="{{ url_for('static', filename='img/cake.jpg') }}">
+        {% endif %}
+        <p>{{one_student.name}} - {{one_student.age}}</p>
+        {% endfor %}
+        <a href="/">Hello World</a>
+        <a href="/path2">Path 2</a>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>
