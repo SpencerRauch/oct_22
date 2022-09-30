@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Here's what we got from you</title>
+</head>
+<body>
+    {#<p>Dog name: {{session.dog_name}}</p>
+    <p>Breed : {{session.breed}}</p>
+    <p>Age: {{age}}</p>
+    <p>Cuteness: {{session.cuteness}}</p> #}
+    {% if session['been_there'] %}
+    <p>You went to the front page</p>
+    {% endif %}
+</body>
+</html>
