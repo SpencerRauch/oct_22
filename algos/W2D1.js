@@ -67,3 +67,72 @@ console.log(oddOccurrencesInArray(numsA), "should equal", expectedA);
 console.log(oddOccurrencesInArray(numsB), "should equal", expectedB);
 console.log(oddOccurrencesInArray(numsC), "should equal", expectedC);
 console.log(oddOccurrencesInArray(numsD), "should equal", expectedD);
+
+/*
+function makeFrequencyTable(arr) { 
+    var result = {}
+    for (i = 0; i < arr.length; i++){
+        var count = 0
+        for (j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j]){
+                count ++ 
+                result[arr[i]] = count
+            }
+        }
+    } 
+    return result
+}
+
+function makeFrequencyTable(arr) { 
+    var result = {};
+    for (i = 0; i < arr.length; i++) {
+        if (result[arr[i]] === undefined) {
+            result[arr[i]] = 1;
+        } else {
+            result[arr[i]] += 1;
+        }
+    }
+    return result;
+}
+
+function oddOccurrencesInArray(nums) {
+var whatevs= makeFrequencyTable(nums)
+for (let j in whatevs) {
+    if (whatevs[j] % 2 == 1) {
+        return j
+    }
+}
+}
+
+
+function makeFrequencyTable(arr) {
+    let freq = {};
+    for (let elem of arr){
+        freq.hasOwnProperty(elem) ? freq[elem]++ : freq[elem] = 1;
+        //  condition             ?  if true     :    if false
+        
+        // if (freq.hasOwnProperty(elem)){
+        //     freq[elem]++
+        // } else {
+        //     freq[elem] = 1
+        // }
+        
+      }
+      return freq;
+  }
+  
+  
+  function oddOccurrencesInArray(nums) {
+      //Your code here
+      let freq = makeFrequencyTable(nums);
+      for (let key in freq){
+          if (freq[key] % 2 !== 0){
+              return parseInt(key);
+          }
+      }
+      return false;
+  }
+  
+  
+
+*/
