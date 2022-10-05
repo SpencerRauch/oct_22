@@ -15,6 +15,8 @@ const str3 = "N(0)t ) 0(k"; // ( ) ) (
 const expected3 = false;
 // Explanation: because the second ")" is premature: there is nothing open for it to close.
 
+const str4 = ") (" // ) (
+const expected4 = false;
 
 /**
  * Determines whether the parenthesis in the given string are valid.
@@ -39,7 +41,7 @@ Braces Valid
 Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
 */
 
-const strA = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
+const strA = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!"; 
 const expectedA = true;
 
 const strB = "D(i{a}l[ t]o)n{e";
@@ -62,3 +64,63 @@ function bracesValid(str) {
 console.log(bracesValid(strA)) // expected: true
 console.log(bracesValid(strB)) // expected: false
 console.log(bracesValid(strC)) // expected: false
+
+
+// function parensValid(str) {
+//     let unmatchedOpens = 0;
+//     for (let char of str) {
+//       if (char === "(") unmatchedOpens++
+//       if (char === ")") unmatchedOpens--
+//       if (unmatchedOpens < 0) return false
+//     }
+//     // if (unmatchedOpens === 0){
+//     //     return true
+//     // } else {
+//     //     return false
+//     // }
+//     return unmatchedOpens == 0;
+//   }
+  
+
+//   function parensValidColby(str) {
+//       var obj = {};
+//       for (var ii = 0; ii < str.length; ii++) {
+//           if (str[ii] === "(" || ")") {
+//               if (!(str[ii] in obj)) {
+//                   obj[str[ii]] = 1;
+//               }
+//               else {
+//                   obj[str[ii]] += 1;
+//               }
+//               if (obj[")"] > obj["("]) {
+//                   return false;
+//               }
+//           }
+//       }
+//       if (obj["("] == obj[")"]) {
+//           return true;
+//       } else {
+//           return false;
+//       }
+//   }
+
+//   function bracesValid(str) {
+//     const stack = [];
+//     const isOpen = { "(": true, "{": true, "[": true }
+//     const closesToOpens = { ")": "(", "}": "{", "]": "[" };
+  
+//     for (let char of str) {
+//       if (isOpen[char]) {
+//         stack.push(char);
+//       } else if (closesToOpens[char]) {
+//         if (closesToOpens[char] === stack[stack.length - 1]) {
+//           stack.pop();
+//         } else {
+//           return false;
+//         }
+//       }
+//     }
+//     return stack.length === 0;
+//   }
+  
+  
