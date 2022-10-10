@@ -51,6 +51,9 @@ const expectedA = 2;
 const numsB = [9, 9];
 const expectedB = -1;
 
+const numsC = [1,1,1,1,1,9,1,1,1,1,1]
+const expectedC = 5
+
 
 
 /**
@@ -67,3 +70,4 @@ function balanceIndex(nums) {
 
 console.log(balanceIndex(numsA)) // 2
 console.log(balanceIndex(numsB)) // -1
+console.log(balanceIndex(numsC)) // 5
