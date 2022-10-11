@@ -46,3 +46,40 @@ console.log(binarySearch(nums3, searchNum3)); // true (1 for bonus)
 
 // bonus, how many times does the search num appear?
 // console.log(binarySearch(nums4, searchNum4)); // 4
+
+
+
+function binarySearch(sortedNums, searchNum) {
+  //Your code here
+  let left = 0;
+  let right = sortedNums.length - 1;
+  while (left <= right) {
+      let mid = Math.floor((left + right) / 2);
+      if (sortedNums[mid] === searchNum) {
+          return countAdjacentDupes(sortedNums, mid)
+          // return true;
+      } else if (sortedNums[mid] < searchNum) {
+          left = mid + 1;
+      } else {
+          right = mid - 1;
+      }
+  }
+  return false;
+}
+
+function countAdjacentDupes(arr, idx) {
+  let count = 1;
+  let elem = arr[idx];
+  let right = idx + 1;
+  let left = idx - 1;
+  while (arr[right] === elem) {
+      count++;
+      right++;
+  }
+  while (arr[left] === elem) {
+      count++;
+      left--;
+  }
+  return count;
+
+}
