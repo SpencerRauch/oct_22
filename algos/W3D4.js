@@ -64,26 +64,13 @@ const expected4B = [42, 0, 6];
  * @returns {Array<any>} A new array of interleaved items.
  */
 function interleaveArrays(arr1, arr2) {
-    let length = arr1.length > arr2.length ? arr1.length : arr2.length
-    let combined = []
-
-    for (let i = 0; i < length; i++){
-        if (arr1[i]) combined.push(arr1[i])
-        if (arr2[i]) combined.push(arr2[i])
-    }
-    return combined
+//Your code here
 }
 
 console.log(interleaveArrays(arrA1, arrB1)); //  [1, "a", 2, "b", 3, "c"];
 console.log(interleaveArrays(arrA2, arrB2)); // [1, 2, 3, 4, 6, 8];
 console.log(interleaveArrays(arrA3, arrB3)); // [1, 2, 3, 4, 5, 7];
 console.log(interleaveArrays(arrA4, arrB4)); // [42, 0, 6];
-
-
-
-
-
-
 
 
 
