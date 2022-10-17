@@ -60,8 +60,14 @@ const expectedC = 0;
 function sumArr(nums, i=0) {
     //Your code here
     //Base case?
+    if (i >= nums.length){
+      return 0
+    }
     //Any more logic?
+    let thisNum = nums[i]
+    i++
     //Recursive call?
+    return thisNum + sumArr(nums,i)
 }
 
 console.log(sumArr(numsA)) // 6
