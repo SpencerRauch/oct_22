@@ -23,11 +23,11 @@ const expected3 = 0;
  * @returns {number}
  */
 function recursiveSigma(num) {
-    //Your code here
-    //Santize value?
-    //Base case?
-    //Recursive call?
-
+  num = Math.floor(num)
+  if (num <= 0) {
+    return 0;
+  }
+  return num + recursiveSigma(num - 1)
 }
 
 console.log(recursiveSigma(num1)); // 15
@@ -57,17 +57,17 @@ const expectedC = 0;
  * @param {Array<number>} nums
  * @returns {number} The sum of the given nums.
  */
-function sumArr(nums, i=0) {
-    //Your code here
-    //Base case?
-    if (i >= nums.length){
-      return 0
-    }
-    //Any more logic?
-    let thisNum = nums[i]
-    i++
-    //Recursive call?
-    return thisNum + sumArr(nums,i)
+function sumArr(nums, i = 0) {
+  //Your code here
+  //Base case?
+  if (i >= nums.length) {
+    return 0
+  }
+  //Any more logic?
+  let thisNum = nums[i]
+  i++
+  //Recursive call?
+  return thisNum + sumArr(nums, i)
 }
 
 console.log(sumArr(numsA)) // 6
