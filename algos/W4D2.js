@@ -27,7 +27,9 @@ function factorial(n) {
     //Your code here
     //Santize value?
     //Base case?
+
     //Recursive return / call
+
 }
 
 /*****************************************************************************/
@@ -63,11 +65,10 @@ const expectedD = 9;
  * @param {number} num The number to sum to one digit.
  * @returns {number} One digit.
  */
-function sumToOneDigit(num) {
-    //Your code here
-    //Base case?
-    // Logic ?
-    // Recursive call / return
+ function sumToOneDigit(num){
+  if (num == 0) return 0
+  if (num % 9 == 0) return 9
+  return num % 9
 }
 
 console.log(sumToOneDigit(numA)) // 5
@@ -75,3 +76,72 @@ console.log(sumToOneDigit(numB)) // 1
 console.log(sumToOneDigit(numC)) // 7
 console.log(sumToOneDigit(numD)) // 9
 /*****************************************************************************/
+
+function sumToOneDigit(num) {
+  num = num.toString()
+  var result = 0
+  for (var i = 0; i < num.length; i++) {
+    result += parseInt(num[i])
+  }
+  if (result.toString().length == 1) {
+  return result
+  } else {
+    return sumToOneDigit(result)
+  }
+}
+
+function factorial(n) {
+  n = Math.floor(n)
+  if(n <= 0){
+    return 1
+  }
+  return n * factorial(n - 1)
+} 
+
+function factorial(n) {
+  //Your code here
+  //Santize value?
+  //Base case?
+  //Recursive return / call
+  if (isNaN(parseInt(n))) {
+      return 0;
+  }
+  n = Math.floor(n);
+  if (n <= 0) {
+      return 1
+  }
+  return n * factorial(n - 1);
+}
+
+function sumToOneDigit(num) {
+  //Your code here
+  if (num < 10) return num
+  numStr = num.toString()
+  processedNum = 0
+  for (let i = 0; i < numStr.length; i++) {
+      processedNum += parseInt(numStr[i])
+  }
+  return sumToOneDigit(processedNum)
+}
+
+function sumToOneDigit(num) {
+  //Your code here
+  //Base case?
+  if (num < 10) {
+      return num
+  }
+  // Logic ?
+  let sum = 0
+  while (num > 0) {
+      sum += num % 10
+      num = Math.floor(num / 10)
+  }
+  // Recursive call / return
+  return sumToOneDigit(sum)
+}
+
+function sumToOneDigit(num){
+  if (num == 0) return 0
+  if (num % 9 == 0) return 9
+  return num % 9
+}
