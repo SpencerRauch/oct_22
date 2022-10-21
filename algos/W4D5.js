@@ -18,8 +18,21 @@ const expected1 = ["ilm", "iml", "lim", "lmi", "mil", "mli"];
  * @returns {Array<string>} All anagrams of the given str.
  */
 // You will need more parameters!
- function generateAnagrams(str) {
+ function generateAnagrams(str, anagrams=[], partial="") {
     //Your code here
+    if (str.length === 0) anagrams.push(partial)
+
+    for (let i = 0; i < str.length; i++){
+        const currentLetter = str[i]
+        const beforeLetter = str.slice(0,i)
+        const afterLetter = str.slice(i+1)
+        const remainingStr = beforeLetter + afterLetter
+        const newPartial = partial + currentLetter
+        generateAnagrams(remainingStr,anagrams, newPartial)
+        
+    }
+    return anagrams
 }
 
-console.log(generateAnagrams(str1)) //["ilm", "iml", "lim", "lmi", "mil", "mli"] (order may vary, that's okay)
+console.log(generateAnagrams("spencer")) //["ilm", "iml", "lim", "lmi", "mil", "mli"] (order may vary, that's okay)
+
